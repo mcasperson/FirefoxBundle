@@ -13,8 +13,8 @@ popd
 
 ./apache-maven-3.6.3/bin/mvn deploy:deploy-file \
   -Dfile=firefoxbundle.tar.bz2 \
-  -DgroupId=com.octopus.linux \
-  -DartifactId=firefoxbundle \
+  -DgroupId=com.octopus \
+  -DartifactId=linuxfirefoxbundle \
   -Dversion=$VERSION \
   -Dpackaging=tar.bz2 \
   -DrepositoryId=octopus-maven-repo \

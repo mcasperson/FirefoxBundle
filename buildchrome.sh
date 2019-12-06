@@ -15,8 +15,8 @@ popd
 
 ./apache-maven-3.6.3/bin/mvn deploy:deploy-file \
   -Dfile=chromebundle.tar.bz2 \
-  -DgroupId=com.octopus.linux \
-  -DartifactId=chromebundle \
+  -DgroupId=com.octopus \
+  -DartifactId=linuxchromebundle \
   -Dversion=$VERSION \
   -Dpackaging=tar.bz2 \
   -DrepositoryId=octopus-maven-repo \

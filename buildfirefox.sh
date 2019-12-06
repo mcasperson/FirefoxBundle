@@ -8,7 +8,7 @@ wget $DRIVER
 tar xzf geckodriver-v0.26.0-linux64.tar.gz
 cp geckodriver firefox
 pushd firefox
-tar -cvf ../firefoxbundle.tar.bz2 *
+tar -cvjf ../firefoxbundle.tar.bz2 *
 popd
 
 ./apache-maven-3.6.3/bin/mvn deploy:deploy-file \

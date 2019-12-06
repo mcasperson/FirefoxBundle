@@ -10,7 +10,7 @@ unzip chromedriver_linux64.zip
 chmod +x chromedriver
 cp chromedriver chrome-linux
 pushd chrome-linux
-tar -cvf ../chromebundle.tar.bz2 *
+tar -cvjf ../chromebundle.tar.bz2 *
 popd
 
 ./apache-maven-3.6.3/bin/mvn deploy:deploy-file \

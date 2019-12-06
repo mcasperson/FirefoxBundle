@@ -11,7 +11,7 @@ wget $DRIVER
 unzip chromedriver_win32.zip
 cp chromedriver.exe ungoogled-chromium
 pushd ungoogled-chromium
-tar -cvf ../chromebundle.tar.bz2 *
+tar -cvjf ../chromebundle.tar.bz2 *
 popd
 
 ./apache-maven-3.6.3/bin/mvn deploy:deploy-file \

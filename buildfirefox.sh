@@ -2,7 +2,7 @@
 
 ./maven.sh
 
-wget BROWSER -O firefox.tar.bz2
+wget $BROWSER -O firefox.tar.bz2
 tar xjf firefox.tar.bz2
 wget $DRIVER
 tar xzf geckodriver-v0.26.0-linux64.tar.gz

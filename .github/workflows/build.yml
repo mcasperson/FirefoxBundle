@@ -18,7 +18,7 @@ jobs:
     - name: Extract firefox driver
       run: tar xzf geckodriver-v0.26.0-linux64.tar.gz
     - name: Copy geckodriver to firefox
-      run: copy geckodriver firefox
+      run: cp geckodriver firefox
     - name: repack firefox
       run: cd firefox; tar -cvf ../firefoxbundle.tar.bz2 *
     - name: Get the AWS Wagon

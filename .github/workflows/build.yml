@@ -6,9 +6,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Set up JDK 1.8
-        uses: actions/setup-java@v1
-        with:
-          java-version: 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
     - name: Get Firefox
       run: wget https://archive.mozilla.org/pub/firefox/candidates/72.0b2-candidates/build1/linux-x86_64/en-US/firefox-72.0b2.tar.bz2
     - name: Extract Firefox
@@ -32,6 +32,6 @@ jobs:
         -DgroupId=com.octopus.linux
         -DartifactId=firefoxbundle
         -Dversion=72.0
-        -Dpackaging=zip
+        -Dpackaging=tar.bz2
         -DrepositoryId=octopus-maven-repo
         -Durl=s3://octopus-maven-repo/release

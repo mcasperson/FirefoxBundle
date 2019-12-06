@@ -15,7 +15,7 @@ sudo cp aws-maven-5.0.0.RELEASE.jar apache-maven-3.6.3/lib
 mkdir ~/.m2
 echo "<servers><server><id>octopus-maven-repo</id><username>$AWS_SECRET_KEY</username><password>$AWS_ACCESS_KEY</password></server></servers>" > ~/.m2/settings.xml
 ./apache-maven-3.6.3/bin/mvn deploy:deploy-file \
-  -Dfile=firefox.zip \
+  -Dfile=firefox.tar.bz2 \
   -DgroupId=com.octopus.linux \
   -DartifactId=firefoxbundle \
   -Dversion=72.0 \

@@ -24,7 +24,9 @@ jobs:
     - name: Get the AWS Wagon
       run: wget https://repo1.maven.org/maven2/org/springframework/build/aws-maven/5.0.0.RELEASE/aws-maven-5.0.0.RELEASE.jar
     - name: Copy aws-maven
-      run: which mvn; cp aws-maven-5.0.0.RELEASE.jar $MAVEN_HOME/lib
+      run: sudo cp aws-maven-5.0.0.RELEASE.jar /usr/share/maven/lib
+    - name: Define credentials
+      run: echo "<servers><server><id>octopus-maven-repo</id><username>${{ secrets.AWS_ACCESS_KEY }}</username><password>${{ secrets.AWS_SECRET_KEY }}</password></server></servers>" > ~/.m2/settings.xml
     - name: deploy file
       run: >
         mvn deploy:deploy-file

@@ -2,14 +2,6 @@
 
 wget http://mirror.intergrid.com.au/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
 tar xzf apache-maven-3.6.3-bin.tar.gz
-wget https://archive.mozilla.org/pub/firefox/candidates/72.0b2-candidates/build1/linux-x86_64/en-US/firefox-72.0b2.tar.bz2
-tar xjf firefox-72.0b2.tar.bz2
-wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
-tar xzf geckodriver-v0.26.0-linux64.tar.gz
-cp geckodriver firefox
-pushd firefox
-tar -cvf ../firefoxbundle.tar.bz2 *
-popd
 wget https://repo1.maven.org/maven2/com/gkatzioura/maven/cloud/s3-storage-wagon/2.3/s3-storage-wagon-2.3.jar
 wget https://repo1.maven.org/maven2/com/gkatzioura/maven/cloud/cloud-storage-core/2.3/cloud-storage-core-2.3.jar
 wget https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-core/1.11.687/aws-java-sdk-core-1.11.687.jar
@@ -32,11 +24,3 @@ cp httpcore-4.4.12.jar apache-maven-3.6.3/lib
 cp joda-time-2.10.5.jar apache-maven-3.6.3/lib
 mkdir ~/.m2
 echo "<settings><servers><server><id>octopus-maven-repo</id><username>$AWS_ACCESS_KEY</username><password>$AWS_SECRET_KEY</password><configuration><region>us-east-1</region><publicRepository>false</publicRepository></configuration></server></servers></settings>" > ~/.m2/settings.xml
-./apache-maven-3.6.3/bin/mvn deploy:deploy-file \
-  -Dfile=firefoxbundle.tar.bz2 \
-  -DgroupId=com.octopus.linux \
-  -DartifactId=firefoxbundle \
-  -Dversion=72.0 \
-  -Dpackaging=tar.bz2 \
-  -DrepositoryId=octopus-maven-repo \
-  -Durl=s3://octopus-maven-repo/release

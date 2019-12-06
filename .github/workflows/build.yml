@@ -24,7 +24,7 @@ jobs:
     - name: Get the AWS Wagon
       run: wget https://repo1.maven.org/maven2/org/springframework/build/aws-maven/5.0.0.RELEASE/aws-maven-5.0.0.RELEASE.jar
     - name: Copy aws-maven
-      run: cp aws-maven-5.0.0.RELEASE.jar $MAVEN_HOME/lib
+      run: which mvn; cp aws-maven-5.0.0.RELEASE.jar $MAVEN_HOME/lib
     - name: deploy file
       run: >
         mvn deploy:deploy-file

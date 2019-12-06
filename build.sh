@@ -14,10 +14,12 @@ wget https://repo1.maven.org/maven2/org/springframework/build/aws-maven/5.0.0.RE
 wget https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-core/1.11.687/aws-java-sdk-core-1.11.687.jar
 wget https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-s3/1.11.687/aws-java-sdk-s3-1.11.687.jar
 wget https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.10.1/jackson-databind-2.10.1.jar
+wget https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.10.1/jackson-core-2.10.1.jar
 cp aws-maven-5.0.0.RELEASE.jar apache-maven-3.6.3/lib
 cp aws-java-sdk-core-1.11.687.jar apache-maven-3.6.3/lib
 cp aws-java-sdk-s3-1.11.687.jar apache-maven-3.6.3/lib
 cp jackson-databind-2.10.1.jar apache-maven-3.6.3/lib
+cp jackson-core-2.10.1.jar apache-maven-3.6.3/lib
 mkdir ~/.m2
 echo "<settings><servers><server><id>octopus-maven-repo</id><username>$AWS_ACCESS_KEY</username><password>$AWS_SECRET_KEY</password></server></servers></settings>" > ~/.m2/settings.xml
 ./apache-maven-3.6.3/bin/mvn deploy:deploy-file \

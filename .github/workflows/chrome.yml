@@ -5,6 +5,8 @@ jobs:
     env:
       AWS_SECRET_KEY:  ${{ secrets.AWS_SECRET_KEY }}
       AWS_ACCESS_KEY:  ${{ secrets.AWS_ACCESS_KEY }}
+      VERSION: 79.0
+      DRIVER: https://chromedriver.storage.googleapis.com/79.0.3945.36/chromedriver_linux64.zip
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1

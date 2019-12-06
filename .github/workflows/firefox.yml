@@ -1,10 +1,13 @@
-name: Build FIrefox Bundle
+name: Build Firefox Bundle
 on: [push]
 jobs:
   build:
     env:
       AWS_SECRET_KEY:  ${{ secrets.AWS_SECRET_KEY }}
       AWS_ACCESS_KEY:  ${{ secrets.AWS_ACCESS_KEY }}
+      VERSION: 72.0
+      DRIVER: https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
+      BROWSER: https://archive.mozilla.org/pub/firefox/candidates/72.0b2-candidates/build1/linux-x86_64/en-US/firefox-72.0b2.tar.bz2
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1

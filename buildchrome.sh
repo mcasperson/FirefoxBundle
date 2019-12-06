@@ -5,7 +5,7 @@
 wget https://download-chromium.appspot.com/dl/Linux_x64?type=snapshots -O chrome-linux.zip
 unzip chrome-linux.zip
 chmod +x chrome-linux/chrome
-wget https://chromedriver.storage.googleapis.com/79.0.3945.36/chromedriver_linux64.zip
+wget $DRIVER
 unzip chromedriver_linux64.zip
 chmod +x chromedriver
 cp chromedriver chrome-linux
@@ -17,7 +17,7 @@ popd
   -Dfile=chromebundle.tar.bz2 \
   -DgroupId=com.octopus.linux \
   -DartifactId=chromebundle \
-  -Dversion=72.0 \
+  -Dversion=$VERSION \
   -Dpackaging=tar.bz2 \
   -DrepositoryId=octopus-maven-repo \
   -Durl=s3://octopus-maven-repo/release

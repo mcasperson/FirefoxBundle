@@ -23,4 +23,4 @@ cp httpclient-4.5.10.jar apache-maven-3.6.3/lib
 cp httpcore-4.4.12.jar apache-maven-3.6.3/lib
 cp joda-time-2.10.5.jar apache-maven-3.6.3/lib
 mkdir ~/.m2
-echo "<settings><servers><server><id>octopus-maven-repo</id><username>$AWS_ACCESS_KEY</username><password>$AWS_SECRET_KEY</password><configuration><region>us-east-1</region><publicRepository>false</publicRepository></configuration></server></servers></settings>" > ~/.m2/settings.xml
+echo "<settings><servers><server><id>octopus-maven-repo</id><username>$AWS_ACCESS_KEY</username><password>$AWS_SECRET_KEY</password><configuration><region>us-east-1</region><publicRepository>true</publicRepository></configuration></server></servers></settings>" > ~/.m2/settings.xml

@@ -1,4 +1,4 @@
-name: CI
+name: Build FIrefox Bundle
 on: [push]
 jobs:
   build:

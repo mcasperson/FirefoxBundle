@@ -37,4 +37,4 @@ echo "<settings><servers><server><id>octopus-maven-repo</id><username>$AWS_ACCES
   -Dversion=72.0 \
   -Dpackaging=tar.bz2 \
   -DrepositoryId=octopus-maven-repo \
-  -Durl=s3://octopus-maven-repo/release
+  -Durl=s3://octopus-maven-repo

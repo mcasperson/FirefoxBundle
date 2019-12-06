@@ -2,11 +2,11 @@
 
 ./maven.sh
 
-wget $BROWSER -O firefox.tar.bz2
-tar xjf firefox.tar.bz2
-wget $DRIVER -O geckodriver.tar.gz
-tar xzf geckodriver.tar.gz
-cp geckodriver firefox
+wget $BROWSER -O firefox.zip
+unzip firefox.zip
+wget $DRIVER -O geckodriver.zip
+tar xzf geckodriver.zip
+cp geckodriver.exe firefox
 pushd firefox
 tar -cvjf ../firefoxbundle.tar.bz2 *
 popd
@@ -14,7 +14,7 @@ popd
 ./apache-maven-3.6.3/bin/mvn deploy:deploy-file \
   -Dfile=firefoxbundle.tar.bz2 \
   -DgroupId=com.octopus \
-  -DartifactId=linuxfirefoxbundle \
+  -DartifactId=windowsfirefoxbundle \
   -Dversion=$VERSION \
   -Dpackaging=tar.bz2 \
   -DrepositoryId=octopus-maven-repo \

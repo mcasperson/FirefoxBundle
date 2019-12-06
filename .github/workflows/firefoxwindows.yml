@@ -1,4 +1,4 @@
-name: Build Firefox Bundle
+name: Build Firefox Windows Bundle
 on: [push]
 jobs:
   build:
